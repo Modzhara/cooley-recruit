@@ -5796,7 +5796,8 @@
                 itemSelector: "[data-iso-item]",
                 masonry: {
                     fitWidth: true,
-                    gutter: 20
+                    layoutMode: "fitRows",
+                    gutter: window.innerWidth <= 1319 ? 20 : 32
                 }
             });
         }
