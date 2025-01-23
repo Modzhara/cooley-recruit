@@ -488,6 +488,11 @@ summary {
   flex-direction: column;
   gap: .5rem
 }
+.spollers__li {
+  display: flex;
+  align-items: center;
+  gap: .625rem
+}
 .spollers__link {
   white-space: nowrap
 }
@@ -2519,11 +2524,6 @@ summary {
 .columns-block12__text {
   text-align: center
 }
-.portfolio-page__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center
-}
 .portfolio-page__title {
   margin-bottom: 1.5rem
 }
@@ -2532,14 +2532,27 @@ summary {
   font-size: 1.125rem
 }
 .portfolio-page__gallery {
-  margin: 0 auto;
-  width: 100%
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 1.5em;
+  -moz-column-gap: 1.5em;
+  column-gap: 2rem;
+  padding: 0;
+  font-size: .85em
 }
-.portfolio-page__gallery div>img {
-  display: block;
-  height: auto;
-  margin-bottom: 2rem;
-  width: 100%
+.portfolio-page__image {
+  display: inline-block;
+  background: #fff;
+  margin: 0 0 2rem;
+  width: 100%;
+  -webkit-transition: 1s ease all;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box
+}
+.portfolio-page__image img {
+  max-width: 100%
 }
 .swiper {
   overflow: hidden
@@ -2755,6 +2768,13 @@ summary {
     -webkit-column-gap: 2.3125rem;
     -moz-column-gap: 2.3125rem;
     column-gap: 2.3125rem
+  }
+}
+@media only screen and (min-width:769px) {
+  .portfolio-page__gallery {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3
   }
 }
 @media (min-width:75em) {
@@ -3150,7 +3170,7 @@ summary {
     font-size: 2rem
   }
   .portfolio-page {
-    margin-bottom: 10.5rem
+    margin-bottom: 8.5rem
   }
   .portfolio-page__text {
     margin-bottom: 5rem
@@ -3198,17 +3218,24 @@ summary {
     margin-bottom: 8.125rem
   }
   .portfolio-page {
-    margin-bottom: 8.125rem
+    margin-bottom: 6.25rem
+  }
+}
+@media only screen and (max-width:480px) {
+  .portfolio-page__gallery {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1
+  }
+}
+@media (max-width:30em) {
+  .portfolio-page__image img {
+    width: 100%
   }
 }
 @media (max-width:20em) {
   .block01-page__columns {
     margin-bottom: 2.5rem
-  }
-}
-@media (max-width:82.4375em) {
-  .portfolio-page__gallery div>img {
-    margin-bottom: 1.25rem
   }
 }
 @media (max-width:61.99875em) {
@@ -3353,6 +3380,14 @@ summary {
   .columns-block10 {
     justify-content: center
   }
+  .portfolio-page__gallery {
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem
+  }
+  .portfolio-page__image {
+    margin: 0 0 1.5rem
+  }
 }
 @media (max-width:54.1875em) {
   .job-page__content {
@@ -3363,7 +3398,7 @@ summary {
   .menu__body {
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
     position: fixed;
     z-index: 2;
     width: 100%;
@@ -3371,7 +3406,7 @@ summary {
     right: -100%;
     top: 0;
     overflow: auto;
-    padding: 11.25rem .9375rem 6.25rem 1.875rem;
+    padding: 11.25rem .9375rem 6.25rem .9375rem;
     transition: right .3s
   }
   .menu__body::before {
@@ -3395,9 +3430,9 @@ summary {
     -webkit-column-gap: 1.3125rem;
     -moz-column-gap: 1.3125rem;
     column-gap: 1.3125rem;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
-    padding-right: 1.5625rem
+    margin-bottom: 4.125rem
   }
   .menu__button {
     padding: .625rem 1.5625rem
@@ -3450,9 +3485,6 @@ summary {
   .header__container-small {
     justify-content: space-between
   }
-  .spollers__title {
-    flex-direction: row-reverse
-  }
   .spollers__arrow {
     width: 1.4375rem;
     height: 1.125rem
@@ -3461,19 +3493,7 @@ summary {
     margin-bottom: .9375rem
   }
   .spollers__list {
-    align-items: flex-end
-  }
-  .spollers__link {
-    display: flex;
-    align-items: center;
-    gap: .625rem
-  }
-  .spollers__link::after {
-    content: "";
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
-    background-color: var(--aqua-blue)
+    align-items: center
   }
   .footer__container-small {
     gap: 2.1875rem
@@ -3490,29 +3510,31 @@ summary {
     padding: .625rem 1.5625rem
   }
 }
-@media (max-width:53.125em)and (max-width:20em) {
+@media (max-width:53.125em)and (max-width:24.375em) {
   .menu__list {
-    row-gap: 1.5625rem
+    row-gap: 1rem
   }
   .menu__link {
-    font-size: 1.75rem
+    font-size: 1rem
   }
   .spollers__title._spoller-active {
     margin-bottom: .9375rem
   }
   .spollers__title {
-    font-size: 1.75rem
-  }
-  .spollers__list {
-    row-gap: .9375rem
+    font-size: 1rem
   }
   .spollers__link {
-    font-size: 1.125rem
+    font-size: 1rem
   }
 }
 @media (max-width:53.125em)and (any-hover:none) {
   .icon-menu {
     cursor: default
+  }
+}
+@media (max-width:53.125em)and (max-width:20em) {
+  .spollers__list {
+    row-gap: .9375rem
   }
 }
 @media (max-width:47.99875em) {
@@ -3881,10 +3903,10 @@ summary {
 }
 @media (max-width:29.99875em) {
   .menu__body {
-    padding: 9.375rem .9375rem 6.25rem 1.875rem
+    padding: 9.8125rem .9375rem 6.25rem .9375rem
   }
-  .menu__list {
-    padding-right: .9375rem
+  .menu__button {
+    padding: .5rem 1.25rem
   }
   .title--center-mobile {
     text-align: center
@@ -3895,15 +3917,12 @@ summary {
   .header__container-small {
     gap: .9375rem
   }
+  .spollers__arrow {
+    width: .8125rem;
+    height: .5rem
+  }
   .spollers__body {
     margin-bottom: .625rem
-  }
-  .spollers__link {
-    gap: .4375rem
-  }
-  .spollers__link::after {
-    width: .3125rem;
-    height: .3125rem
   }
   .hero-page {
     min-height: 45.375rem
@@ -4501,7 +4520,7 @@ summary {
 }
 @media (max-width:53.125em)and (min-width:53.125em) {
   .menu__list {
-    row-gap: 2.8125rem
+    row-gap: 3.125rem
   }
   .menu__link {
     font-size: 3rem
@@ -4519,24 +4538,21 @@ summary {
     font-size: 2.125rem
   }
 }
-@media (max-width:53.125em)and (min-width:20em)and (max-width:53.125em) {
+@media (max-width:53.125em)and (min-width:24.375em)and (max-width:53.125em) {
   .menu__list {
-    row-gap: clamp(1.5625rem ,.8077830189rem + 3.7735849057vw ,2.8125rem)
+    row-gap: clamp(1rem ,-.8016304348rem + 7.3913043478vw ,3.125rem)
   }
   .menu__link {
-    font-size: clamp(1.75rem ,.9952830189rem + 3.7735849057vw ,3rem)
+    font-size: clamp(1rem ,-.6956521739rem + 6.9565217391vw ,3rem)
   }
   .spollers__title._spoller-active {
-    margin-bottom: clamp(.9375rem ,-.1945754717rem + 5.6603773585vw ,2.8125rem)
+    margin-bottom: clamp(.9375rem ,-.652173913rem + 6.5217391304vw ,2.8125rem)
   }
   .spollers__title {
-    font-size: clamp(1.75rem ,.9952830189rem + 3.7735849057vw ,3rem)
-  }
-  .spollers__list {
-    row-gap: clamp(.9375rem ,.3714622642rem + 2.8301886792vw ,1.875rem)
+    font-size: clamp(1rem ,-.6956521739rem + 6.9565217391vw ,3rem)
   }
   .spollers__link {
-    font-size: clamp(1.125rem ,.5212264151rem + 3.0188679245vw ,2.125rem)
+    font-size: clamp(1rem ,.0461956522rem + 3.9130434783vw ,2.125rem)
   }
 }
 @media (min-width:24.375em)and (max-width:90em) {
@@ -4823,6 +4839,11 @@ summary {
     margin-bottom: clamp(3rem ,2.2571428571rem + 3.0476190476vw ,5rem)
   }
 }
+@media (max-width:53.125em)and (min-width:20em)and (max-width:53.125em) {
+  .spollers__list {
+    row-gap: clamp(.9375rem ,.3714622642rem + 2.8301886792vw ,1.875rem)
+  }
+}
 @media (min-width:47.99875em)and (max-width:90em) {
   .item-job__name {
     font-size: clamp(1.125rem ,.1250558019rem + 2.0832713312vw ,2rem)
@@ -4999,7 +5020,7 @@ summary {
     margin-bottom: clamp(8.125rem ,5.4107142857rem + 5.6547619048vw ,10.5rem)
   }
   .portfolio-page {
-    margin-bottom: clamp(8.125rem ,5.4107142857rem + 5.6547619048vw ,10.5rem)
+    margin-bottom: clamp(6.25rem ,3.6785714286rem + 5.3571428571vw ,8.5rem)
   }
 }
 @media (min-width:29.99875em)and (min-width:24.375em)and (max-width:90em) {
@@ -5025,6 +5046,16 @@ summary {
 @media (min-width:29.9375em)and (max-width:90em) {
   .block10-page__inner {
     gap: clamp(1.25rem ,-.6191467222rem + 6.243496358vw ,5rem)
+  }
+}
+@media only screen and (min-width:481px)and (max-width:768px) {
+  .portfolio-page__gallery {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2
+  }
+  .portfolio-page__image {
+    margin: 0 0 1.5rem
   }
 }
 @media (any-hover:hover) {
