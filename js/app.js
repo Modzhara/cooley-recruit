@@ -133,9 +133,9 @@
                 }));
             }
             function initSpollerBody(spollersBlock, hideSpollerBody = true) {
-                let spollerItems = spollersBlock.querySelectorAll("details");
+                let spollerItems = spollersBlock.querySelectorAll(".spollers__details");
                 if (spollerItems.length) spollerItems.forEach((spollerItem => {
-                    let spollerTitle = spollerItem.querySelector("summary");
+                    let spollerTitle = spollerItem.querySelector(".spollers__summary");
                     if (hideSpollerBody) {
                         spollerTitle.removeAttribute("tabindex");
                         if (!spollerItem.hasAttribute("data-open")) {
@@ -155,11 +155,11 @@
             }
             function setSpollerAction(e) {
                 const el = e.target;
-                if (el.closest("summary") && el.closest("[data-spollers]")) {
+                if (el.closest(".spollers__summary") && el.closest("[data-spollers]")) {
                     e.preventDefault();
                     if (el.closest("[data-spollers]").classList.contains("_spoller-init")) {
-                        const spollerTitle = el.closest("summary");
-                        const spollerBlock = spollerTitle.closest("details");
+                        const spollerTitle = el.closest(".spollers__summary");
+                        const spollerBlock = spollerTitle.closest(".spollers__details");
                         const spollersBlock = spollerTitle.closest("[data-spollers]");
                         const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
                         const scrollSpoller = spollerBlock.hasAttribute("data-spoller-scroll");
@@ -200,9 +200,9 @@
                 }
             }
             function hideSpollersBody(spollersBlock) {
-                const spollerActiveBlock = spollersBlock.querySelector("details[open]");
+                const spollerActiveBlock = spollersBlock.querySelector(".spollers__item._spoller-open");
                 if (spollerActiveBlock && !spollersBlock.querySelectorAll("._slide").length) {
-                    const spollerActiveTitle = spollerActiveBlock.querySelector("summary");
+                    const spollerActiveTitle = spollerActiveBlock.querySelector(".spollers__summary");
                     const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
                     spollerActiveTitle.classList.remove("_spoller-active");
                     _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);

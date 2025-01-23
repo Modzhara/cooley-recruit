@@ -2663,6 +2663,9 @@ summary {
   .menu__link {
     padding: 0 .125rem
   }
+  .spollers__li img {
+    display: none
+  }
 }
 @media (min-width:53.1875em) {
   .spollers__decor {
