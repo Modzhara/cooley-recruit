@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250123085743">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250203094543">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,6 @@
 									</div>
 							</li>
 							<li class="menu__item"><a href="" class="menu__link">About us</a></li>
-							<li class="menu__item"><a href="" class="menu__link">News</a></li>
 						</ul>
 						<a data-da=".menu__body, 479" href="" class="menu__button">Contact us</a>
 					</nav>
@@ -172,41 +171,66 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__block10 block10-page">
-				<div class="block10-page__container">
-					<div class="block10-page__inner">
-						<div class="block10-page__content">
-							<h2 class="block10-page__title title">Contact us</h2>
-							<p class="block10-page__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-								tristique.
-							</p>
-						</div>
+			<!-- <section class="page__block10 block10-page">
+					<div class="block10-page__container">
+						<div class="block10-page__inner">
+							<div class="block10-page__content">
+								<h2 class="block10-page__title title">Contact us</h2>
+								<p class="block10-page__text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+									tristique.
+								</p>
+							</div>
 
-						<div class="block10-page__columns columns-block10">
-							<div class="columns-block10__rows">
-								<div class="columns-block10__row">
-									<img src="img/contacts/icons/email.svg" alt="Image" />
-									<div class="columns-block10__content">
-										<h2 class="columns-block10__title">Email</h2>
-										<a href="mailto:hello@relume.io" class="columns-block10__link">hello@relume.io</a>
+							<div class="block10-page__columns columns-block10">
+								<div class="columns-block10__rows">
+									<div class="columns-block10__row">
+										<img src="img/contacts/icons/email.svg" alt="Image" />
+										<div class="columns-block10__content">
+											<h2 class="columns-block10__title">Email</h2>
+											<a href="mailto:hello@relume.io" class="columns-block10__link">hello@relume.io</a>
+										</div>
 									</div>
-								</div>
-								<div class="columns-block10__row">
-									<img src="img/contacts/icons/phone.svg" alt="Image" />
-									<div class="columns-block10__content">
-										<h2 class="columns-block10__title">Phone</h2>
-										<a href="tel:15550000000" class="columns-block10__link">+1 (555) 000-0000</a>
+									<div class="columns-block10__row">
+										<img src="img/contacts/icons/phone.svg" alt="Image" />
+										<div class="columns-block10__content">
+											<h2 class="columns-block10__title">Phone</h2>
+											<a href="tel:15550000000" class="columns-block10__link">+1 (555) 000-0000</a>
+										</div>
 									</div>
-								</div>
-								<div class="columns-block10__row">
-									<img src="img/contacts/icons/location.svg" alt="Image" />
-									<div class="columns-block10__content">
-										<h2 class="columns-block10__title">Office</h2>
-										<a href="https://www.google.com/maps" class="columns-block10__link columns-block10__link--default">123 Sample St, Sydney NSW 2000 AU</a>
+									<div class="columns-block10__row">
+										<img src="img/contacts/icons/location.svg" alt="Image" />
+										<div class="columns-block10__content">
+											<h2 class="columns-block10__title">Office</h2>
+											<a href="https://www.google.com/maps" class="columns-block10__link columns-block10__link--default"
+												>123 Sample St, Sydney NSW 2000 AU</a
+											>
+										</div>
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+				</section> -->
+			<section class="page__cv cv-page">
+				<div class="cv-page__container">
+					<div class="cv-page__columns columns-cv">
+						<div class="columns-cv__column">
+							<h2 class="columns-cv__title">Load CV</h2>
+							<p class="columns-cv__text">Upload your cv in one click</p>
+						</div>
+						<div class="columns-cv__column columns-cv__column--form">
+							<form class="columns-cv__form" action="#">
+								<div class="columns-cv__buttons buttons-group">
+									<button type="button" class="columns-cv__button buttons-group__fill">
+										LOAD
+										<input data-required class="columns-cv__file" id="cv2" accept=".pdf, .doc, .docx, .txt" type="file" />
+									</button>
+
+									<button type="submit" class="buttons-group__border">SEND</button>
+								</div>
+							</form>
+							<div id="formPreview2"></div>
 						</div>
 					</div>
 				</div>
@@ -251,7 +275,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20250123085743"></script>
+	<script src="js/app.min.js?_v=20250203094543"></script>
 </body>
 
 </html>
